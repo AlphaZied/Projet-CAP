@@ -3,6 +3,7 @@
 		<link rel="stylesheet" type="text/css" href="/SpecialFonts/css/font-awesome.min.css" media="all"/>
 		<link rel="stylesheet" type="text/css" href="/SpecialFonts/css/font-awesome.css" media="all"/>
 		<link rel="stylesheet" type="text/css" href="style.css" media="all"/>
+		<title> CAP </title>
 	</head>
 
 	<body id="all">

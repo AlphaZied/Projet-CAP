@@ -12,7 +12,7 @@
 ```
 
 ###Technologies :
-- Design (CSS3) : Minimalisme, Inspiration de l'aspect de sites web 2.0
+- Design (CSS3) : Inspiration de l'aspect de sites web 2.0 & Concept de l'Extra-Terrestre
 - Communication client/serveur : Websockets (NodeJS) et éventuellement dans certains cas et pages Ajax
 - Communication serveur/DB : PDO --> MySQL (prénommer les tables et colonnes)
 - Dynamisme client du site : Javascript (& Jquery)
@@ -35,3 +35,18 @@
 ```css
 background-image: linear-gradient(120deg, #155799, #159957);
 ```
+###Tables :
+1) Infos sur l'utilisateur = users
+- Clé primaire = id
+- Nom du joueur = pseudo
+- Niveau du joueur = lvl (valeur par défault = 1)
+- Adresse mail du joueur = email
+- Mot de passe du joueur = mdp
+- Champs d'expérience (la barre d'xp qui permet le changement de niveau lorsqu'elle est pleine) = exp (valeur par défault = 0)
+- Image de profil du joueur = pdp
+- Score pour chaque continent (Afrique;AmériqueDuNord;AmériqueDuSud;Europe;Asie;Océanie;Monde) = score (valeur par défault = 0;0;0;0;0;0;0)
+- Amis du joueur (id de l'ami 1; id de l'ami2; id de l'ami3...) = amis
+- IP de l'utilisateur = ip
+- Date d'inscription = inscription
+- Dernière connexion = last_connect
+- Rank du membre = rank

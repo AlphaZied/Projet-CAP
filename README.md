@@ -18,7 +18,11 @@
 - Dynamisme client du site : Javascript (& Jquery)
 
 ###Fonctionnalités :
-1. Champs de bataille : Pour chaque pays concerné par une question (capitale, drapeaux, présidents, monuments, langues parlées...) on diffuse une série d'infos anecdotiques sympa sur le pays en question + mise en place des niveaux de difficultés et des gains d'XP.
+1. Champs de bataille :
+ * Version Beta : Capitales & Drapeaux.
+ * Version Finale : Capitales, Drapeaux, Présidents, Monuments, Langues parlées, Population & Puissance
+ * Diffusion d'une série d'infos anecdotiques sympa sur le pays en question.
+ * Mise en place des niveaux de difficultés et des gains d'XP.
 2. Espace membre (Home) : 
  * Système d'amis
  * Statistiques (parties jouées, perdues, gagnées, xp gagné)

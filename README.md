@@ -18,18 +18,17 @@
 - Dynamisme client du site : Javascript (& Jquery)
 
 ###Fonctionnalités :
-1. Champs de bataille :
- * Version Beta : Capitales & Drapeaux.
- * Version Finale : Capitales, Drapeaux, Présidents, Monuments, Langues parlées, Population & Puissance
+1. **Champs de bataille** :
+ * Version Beta : Capitales & Drapeaux contre le temps.
+ * Version Finale : Capitales, Drapeaux, Présidents, Monuments, Langues parlées, Population & Puissance contre amis ou temps.
  * Diffusion d'une série d'infos anecdotiques sur le pays.
  * Mise en place des niveaux de difficultés et des gains d'XP.
-2. Espace membre (Home) : 
- * Système d'amis
- * Statistiques (parties jouées, perdues, gagnées, xp gagné)
- * Afficher niveau
- * Classement chaque semaine (en terme d'xp)
+2. **Espace membre (Home)** : 
+ * Système d'amis (pour version finale)
+ * Statistiques (parties jouées, perdues, gagnées, xp gagné) & Afficher niveau
+ * Classement chaque semaine (en terme de Score)
  * Paramètres (modifier mot de passe & upload image profil)
-3. Un panel de connexion et d'inscription (avec récupération mot de passe et mail de bienvenue)
+3. **Panel** de connexion et d'inscription (avec récupération mot de passe et mail de bienvenue)
 
 ###Codes couleurs :
 - Bleu, vert, blanc (nuages + atmosphère)

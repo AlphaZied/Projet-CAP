@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="description" content="PlayCapital est un jeu multijoueur gratuit. Défiez vos amis, découvrez de nouvelles capitales et amusez-vous !" />
-<link rel="shortcut icon" href="/favicons.png" />
+<link rel="shortcut icon" href="/favicons.ico" />
 <link rel="stylesheet" href="/style.css" type="text/css">
 ```
 
@@ -19,11 +19,19 @@
 
 ###Fonctionnalités :
 1. Pour chaque pays concerné par une question (capitale, drapeau ou autres...) on diffuse une série d'infos anecdotiques sympa sur le pays en question (lieu du quizz) + mise en place des niveaux de difficultés et des gains d'XP en conséquence.
-2. Espace membre (Home) : système d'amis ; statistiques (parties jouées, perdues, gagnées, xp gagné) ; afficher niveau ; classement chaque semaine ; paramètres (modifier mot de passe + image profil)
+2. Espace membre (Home) : 
+1. Système d'amis 2.1
+2. Statistiques (parties jouées, perdues, gagnées, xp gagné) 2.2
+3. Afficher niveau 2.3
+4. Classement chaque semaine 2.4
+5. Paramètres (modifier mot de passe + image profil) 2.5
 3. Un panel de connexion et d'inscription (+ récupération mot de passe ?)
 
 ###Codes couleurs :
 - Bleu, vert, blanc (nuages + atmosphère)
 - Bleu : celui de Paypal ou Skype...
 - Vert : celui de w3schools, whatsapp...
-- Jouer sur des dégradés (vert-bleu), par exemple : background-image: linear-gradient(120deg, #155799, #159957);
+- Jouer sur des dégradés (vert-bleu), par exemple :
+```css
+background-image: linear-gradient(120deg, #155799, #159957);
+```

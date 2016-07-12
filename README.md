@@ -1,12 +1,12 @@
-#Projet Jeu Capitales
+#ExtraGeo GAME
 
 ###Standardisation
 ####Head
 ```html
-<title>PlayCapital - Découvre le monde en t'amusant ! </title>
+<title>ExtraGeo - Découvre le monde en t'amusant !</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="description" content="PlayCapital est un jeu multijoueur gratuit. Défiez vos amis, découvrez de nouvelles capitales et amusez-vous !" />
+<meta name="description" content="ExtraGeo est un jeu multijoueur gratuit. Défiez vos amis, découvrez de nouvelles capitales, des présidents et des monuments, mais surtout amusez-vous !" />
 <link rel="shortcut icon" href="/favicons.ico" />
 <link rel="stylesheet" href="/style.css" type="text/css">
 ```
@@ -18,14 +18,14 @@
 - Dynamisme client du site : Javascript (& Jquery)
 
 ###Fonctionnalités :
-1. Pour chaque pays concerné par une question (capitale, drapeau ou autres...) on diffuse une série d'infos anecdotiques sympa sur le pays en question (lieu du quizz) + mise en place des niveaux de difficultés et des gains d'XP en conséquence.
+1. Pour chaque pays concerné par une question (capitale, drapeaux, présidents, monuments, langues...) on diffuse une série d'infos anecdotiques sympa sur le pays en question (lieu du quizz) + mise en place des niveaux de difficultés et des gains d'XP.
 2. Espace membre (Home) : 
  * Système d'amis
  * Statistiques (parties jouées, perdues, gagnées, xp gagné)
  * Afficher niveau
  * Classement chaque semaine
  * Paramètres (modifier mot de passe + image profil)
-3. Un panel de connexion et d'inscription (+ récupération mot de passe ?)
+3. Un panel de connexion et d'inscription (avec récupération mot de passe et mail de bienvenue)
 
 ###Codes couleurs :
 - Bleu, vert, blanc (nuages + atmosphère)
@@ -36,7 +36,7 @@
 background-image: linear-gradient(120deg, #155799, #159957);
 ```
 ###Tables :
-1) Infos sur l'utilisateur = users
+####Infos sur l'utilisateur = users
 - Clé primaire = id
 - Nom du joueur = pseudo
 - Niveau du joueur = lvl (valeur par défault = 1)

@@ -3,9 +3,10 @@
 ###Standardisation
 ####Head
 ```html
+<title>PlayCapital - Découvre le monde en t'amusant ! </title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="description" content="Découvre un classement variable et incroyable des meilleurs rétros Habbo <?php echo date('Y'); ?> français, sélectionne le rétro habbo qui te convient le mieux !" />
+<meta name="description" content="PlayCapital est un jeu multijoueur gratuit. Défiez vos amis, découvrez de nouvelles capitales et amusez-vous !" />
 <link rel="shortcut icon" href="/favicons.png" />
 <link rel="stylesheet" href="/style.css" type="text/css">
 ```

@@ -18,14 +18,14 @@
 - Dynamisme client du site : Javascript (& Jquery)
 
 ###Fonctionnalités :
-1. Pour chaque pays concerné par une question (capitale, drapeau ou autres...) on diffuse une série d'infos anecdotiques sympa sur le pays en question (lieu du quizz) + mise en place des niveaux de difficultés et des gains d'XP en conséquence.
-2. Espace membre (Home) : 
-- Système d'amis
-- Statistiques (parties jouées, perdues, gagnées, xp gagné)
-- Afficher niveau
-- Classement chaque semaine
-- Paramètres (modifier mot de passe + image profil)
-3. Un panel de connexion et d'inscription (+ récupération mot de passe ?)
+- Pour chaque pays concerné par une question (capitale, drapeau ou autres...) on diffuse une série d'infos anecdotiques sympa sur le pays en question (lieu du quizz) + mise en place des niveaux de difficultés et des gains d'XP en conséquence.
+- Espace membre (Home) : 
++ Système d'amis
++ Statistiques (parties jouées, perdues, gagnées, xp gagné)
++ Afficher niveau
++ Classement chaque semaine
++ Paramètres (modifier mot de passe + image profil)
+- Un panel de connexion et d'inscription (+ récupération mot de passe ?)
 
 ###Codes couleurs :
 - Bleu, vert, blanc (nuages + atmosphère)

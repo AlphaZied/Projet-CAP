@@ -3,10 +3,10 @@
 ###Standardisation
 ####Head
 ```html
-<title>ExtraGeo - Découvre le monde en t'amusant !</title>
+<title>ExtraGeo - La géographie amusante</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="description" content="ExtraGeo est un jeu multijoueur gratuit. Défiez vos amis, découvrez de nouvelles capitales, des présidents et des monuments, mais surtout amusez-vous !" />
+<meta name="description" content="ExtraGeo est un jeu multijoueur en ligne et gratuit. Défiez vos amis dans des duels dont seul vos connaissances du terrain vous aideront à vous surpasser !" />
 <link rel="shortcut icon" href="/favicons.ico" />
 <link rel="stylesheet" href="/style.css" type="text/css">
 ```
@@ -18,7 +18,7 @@
 - Dynamisme client du site : Javascript (& Jquery)
 
 ###Fonctionnalités :
-1. Pour chaque pays concerné par une question (capitale, drapeaux, présidents, monuments, langues...) on diffuse une série d'infos anecdotiques sympa sur le pays en question (lieu du quizz) + mise en place des niveaux de difficultés et des gains d'XP.
+1. Champs de bataille : Pour chaque pays concerné par une question (capitale, drapeaux, présidents, monuments, langues parlées...) on diffuse une série d'infos anecdotiques sympa sur le pays en question + mise en place des niveaux de difficultés et des gains d'XP.
 2. Espace membre (Home) : 
  * Système d'amis
  * Statistiques (parties jouées, perdues, gagnées, xp gagné)

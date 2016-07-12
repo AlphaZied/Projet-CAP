@@ -20,11 +20,11 @@
 ###Fonctionnalités :
 1. Pour chaque pays concerné par une question (capitale, drapeau ou autres...) on diffuse une série d'infos anecdotiques sympa sur le pays en question (lieu du quizz) + mise en place des niveaux de difficultés et des gains d'XP en conséquence.
 2. Espace membre (Home) : 
-1. Système d'amis 2.1
-2. Statistiques (parties jouées, perdues, gagnées, xp gagné) 2.2
-3. Afficher niveau 2.3
-4. Classement chaque semaine 2.4
-5. Paramètres (modifier mot de passe + image profil) 2.5
+- Système d'amis
+- Statistiques (parties jouées, perdues, gagnées, xp gagné)
+- Afficher niveau
+- Classement chaque semaine
+- Paramètres (modifier mot de passe + image profil)
 3. Un panel de connexion et d'inscription (+ récupération mot de passe ?)
 
 ###Codes couleurs :

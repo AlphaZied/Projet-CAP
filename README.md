@@ -20,7 +20,7 @@
 ###Fonctionnalités :
 1. **Champs de bataille** :
  * Version Beta : Capitales & Drapeaux contre le temps.
- * Version Finale : Capitales, Drapeaux, Présidents, Monuments, Langues parlées, Population & Puissance contre amis ou temps.
+ * Version Finale : Capitales, Drapeaux, Présidents, Monuments, Langues parlées, Population & Puissance contre amis, temps ou recherche personne connectée aléatoire.
  * Diffusion d'une série d'infos anecdotiques sur le pays.
  * Mise en place des niveaux de difficultés et des gains d'XP.
 2. **Espace membre (Home)** : 

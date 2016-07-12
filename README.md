@@ -21,14 +21,14 @@
 1. Champs de bataille :
  * Version Beta : Capitales & Drapeaux.
  * Version Finale : Capitales, Drapeaux, Présidents, Monuments, Langues parlées, Population & Puissance
- * Diffusion d'une série d'infos anecdotiques sympa sur le pays en question.
+ * Diffusion d'une série d'infos anecdotiques sur le pays.
  * Mise en place des niveaux de difficultés et des gains d'XP.
 2. Espace membre (Home) : 
  * Système d'amis
  * Statistiques (parties jouées, perdues, gagnées, xp gagné)
  * Afficher niveau
- * Classement chaque semaine
- * Paramètres (modifier mot de passe + image profil)
+ * Classement chaque semaine (en terme d'xp)
+ * Paramètres (modifier mot de passe & upload image profil)
 3. Un panel de connexion et d'inscription (avec récupération mot de passe et mail de bienvenue)
 
 ###Codes couleurs :

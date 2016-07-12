@@ -1,9 +1,19 @@
 #Projet Jeu Capitales
 
+###Standardisation
+####Head
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="Découvre un classement variable et incroyable des meilleurs rétros Habbo <?php echo date('Y'); ?> français, sélectionne le rétro habbo qui te convient le mieux !" />
+<link rel="shortcut icon" href="/favicons.png" />
+<link rel="stylesheet" href="/style.css" type="text/css">
+```
+
 ###Technologies :
 - Design (CSS3) : Minimalisme, Inspiration de l'aspect de sites web 2.0
 - Communication client/serveur : Websockets (NodeJS) et éventuellement dans certains cas et pages Ajax
-- Communication serveur/DB : PDO --> MySQL (prénommés les tables et colonnes)
+- Communication serveur/DB : PDO --> MySQL (prénommer les tables et colonnes)
 - Dynamisme client du site : Javascript (& Jquery)
 
 ###Fonctionnalités :

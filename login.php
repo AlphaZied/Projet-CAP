@@ -19,23 +19,20 @@
 </div>
 <div class="main">
 <div class="box">
-<h3 class="box-header">Inscription</h3>
+<h3 class="box-header">Connexion</h3>
 <form class="form" method="post">
 <div class="ensemble">
 <label for="pseudo">Pseudo</label>
 <input class="form-elements" type="text" name="pseudo" id="pseudo">
 </div>
 <div class="ensemble">
-<label for="email">Email</label>
-<input class="form-elements" type="text" name="email" id="email">
-</div>
-<div class="ensemble">
-<label for="password">Mot de passe</label>
+<label for="password">Mot de passe <b><a href="forgot.php">(Oublié ?)</a></b></label>
 <input class="form-elements" type="password" name="password" id="password">
 </div>
-<input type="submit" name="submit" value="S’inscrire" class="btn-submit" id="submit">
-<hr>
-<a href="login.php">Tu es déjà inscris ? Connecte toi !</a>
+<div class="ensemble">
+Rester connecté? <input type="checkbox" name="remember_me" checked="checked" value="true">
+</div>
+<input type="submit" name="submit" value="Valider" class="btn-submit" id="submit">
 </form>
 </div>
 <footer class="site-footer">

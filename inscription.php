@@ -8,6 +8,15 @@
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body>
+<div class="page-header">
+<h1 class="site-name">ExtraGeo</h1>
+
+<div class="liens">
+<a href="index.php" class="btn-header">Accueil</a>
+<a href="login.php" class="btn-header">Se connecter</a>
+<a href="inscription.php" class="btn-header">S'inscrire</a>
+ </div>
+</div>
 <div class="main">
 <div class="box">
 <h3 class="box-header">Inscription</h3>
@@ -29,7 +38,7 @@
 </div>
 <footer class="site-footer">
 <span class="site-footer-owner">
-<a href="http://topjeu.fr">ExtraGeo</a> est maintenu par <a href="https://github.com/AlphaZied">AlphaZied</a> &amp; <a href="https://github.com/OfficialAnti">OfficialAnti</a>.</span>
+<a href="http://topjeu.fr">ExtraGeo</a> est maintenu par <a href="https://github.com/AlphaZied" target="_blank">AlphaZied</a> &amp; <a href="https://github.com/OfficialAnti" target="_blank">OfficialAnti</a>.</span>
 </footer>
 </div>
 </body>					

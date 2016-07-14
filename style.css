@@ -1,93 +1,177 @@
-body{
-	background:url('carte.jpg');
-	background-size:100% 102%;
-	transition: background-size 3s;
+body
+{
+padding: 0;
+margin: 0;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 13px;
+color: #717171;
+background-color: #f3f5f9;
+line-height: 1.428571429;
+box-sizing: border-box;
 }
 
-#go_all{
-	border-radius:100px;
-	background:black;
-	padding:40px;
-	color:white;
-	text-align:center;
-	width:20px;
-	cursor:pointer;
+.btn-submit
+{
+width: 100%;
+height: 50px;
+font-weight: bold;
+font-size: 16px;
+-webkit-appearance: button;
+cursor: pointer;
+border: 0;
+border-radius: 3px;
+color: #fff;
+background-color: #54B551;
+border-color: #49a647;
+display: inline-block;
+margin-bottom: 0;
+font-weight: normal;
+text-align: center;
+vertical-align: middle;
+touch-action: manipulation;
+cursor: pointer;
+background-image: none;
+border: 1px solid transparent;
+white-space: nowrap;
+padding: 4px 12px;
+font-size: 15px;
+line-height: 1.43;
+border-radius: 4px;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
 }
 
-#go_all:hover{
-	opacity:0.8;
+.btn-submit:hover
+{
+color: #fff;
+background-color: #42943f;
+border-color: #367b34;
 }
 
-#cercle{
-	border:3px solid black;
-	width:100px;
-	height:100px;
-	padding:10px;
-	border-radius:100px;
+.btn-submit:focus
+{
+color: #fff;
+background-color: #42943f;
+border-color: #224c21;
+color: #fff;
+background-color: #48a245;
+border-color: #3d893a;
+outline: 0 !important;
+-webkit-box-shadow: none;
+-moz-box-shadow: none;
+box-shadow: none;
 }
 
-.sci{
-    margin-top: -50px;
-    margin-left: 0px;
-    position: relative;
-    border: 2px solid #629DC5;
-    border-radius: 20px;
-    box-shadow: 0 0 10px 6px #629DC5;
-    width: 100px;
-    z-index: -1;
-    animation-name: syfy;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    animation-fill-mode: forwards;
+.btn-submit:active
+{
+background-image: none;
+-webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+color: #fff;
+outline: 0 !important;
+background-color: #42943f;
+border-color: #367b34;
 }
 
-@-webkit-keyframes syfy{
-to{transform: rotate(360deg);}
-} 
-
-#ameriqueN{
-	position:absolute;
-	height:40%;
-	width:40%;
-	margin-top:20vh;
+.box
+{
+margin: auto;
+margin-top: 8%;
+width: 500px;
+border: 1px solid #CCC;
+padding: 20px;
+border-radius: 3px;
+background-color: #FAFAFA;
+box-shadow: 0px 10px 1px #54b551;
 }
 
-#ameriqueS{
-	position: absolute;
-    height: 40%;
-    width: 30%;
-    margin-top: 50vh;
-    margin-left: 20vh;
+@media only screen and (max-width: 500px) {
+.box
+{
+width : 100%;
+}
+}
+.box-header
+{
+text-align: center;
+margin: 0;
+color: #355368;
+font-size: 24px;
+border-bottom: 1px solid #d3d3d3;
+padding: 10px 0;
 }
 
-#afrique{
-	position: absolute;
-    height: 30%;
-    width: 20%;
-    margin-top: 45vh;
-    margin-left: 80vh;
+.form-elements
+{
+display: block;
+width: 100%;
+height: 34px;
+padding: 6px 12px;
+font-size: 14px;
+line-height: 1.428571429;
+color: #555555;
+vertical-align: middle;
+background-color: #ffffff;
+border: 1px solid #cccccc;
+border-radius: 4px;
+-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+-webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
 
-#europe{
-	position: absolute;
-    height: 19%;
-    width: 13%;
-    margin-top: 25vh;
-    margin-left: 85vh;
+.form-elements:focus
+{
+border-color: #66afe9;
+outline: 0;
+-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
 }
 
-#asie{
-	position: absolute;
-    height: 30%;
-    width: 40%;
-    margin-top: 25vh;
-    margin-left: 115vh;
+.ensemble
+{
+margin-bottom : 15px;
 }
 
-#oceanie{
-	position: absolute;
-    height: 28%;
-    width: 24%;
-    margin-top: 55vh;
-    margin-left: 155vh;
+.form {
+padding: 20px 20px 10px;
+}
+
+.site-footer
+{
+padding-top: 30px;
+margin-top: 30px;
+border-top: solid 1px #cdcfd2;
+display: block;
+}
+
+.site-footer-owner
+{
+display: block;
+font-weight: bold;
+font-size: 1rem;
+}
+
+a
+{
+color: #1e6bb8;
+text-decoration: none;
+background-color: transparent;
+}
+
+hr {
+margin-top: 20px;
+margin-bottom: 20px;
+border: 0;
+border-top: 1px solid #eeeeee;
+box-sizing: content-box;
+height: 0;
+}
+
+.main
+{
+max-width: 1000px;
+padding: 15px;
+margin: auto;
 }

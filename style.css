@@ -97,7 +97,12 @@ width : 100%;
 }
 .site-name
 {
-display: none;
+display: none !important;
+}
+.liens {
+text-align: center;
+position: relative;
+top: 15px;
 }
 }
 .box-header

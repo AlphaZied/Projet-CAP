@@ -1,28 +1,56 @@
-function show(continent){
-	for(var i = 0; i < 6; i++){
-		if(continent == i)document.getElementById('the_bouton'+i).style.display = "block";
-    }
+var i = 0; // compteur
+var inter; // contient l'interval de temps (setInterval)
+var caract; // contient les caractères du message qui se veut d'avoir l'effet parole
+
+// Module permettant l'effet parole de l'alien
+function speak_initialisation(mess, content){
+	caract = mess.split("");
+	inter = setInterval(speak, 50, mess, content);
+}
+function speak(mess, content){
+	$(content).innerHTML += caract[i];
+	i++;
+	if(i == caract.length){clearInterval(inter);i=0;}
 }
 
-function deshow(continent){
-	for(var i = 0; i < 6; i++){
-		if(continent == i)document.getElementById('the_bouton'+i).style.display = "none";
-    }
+// Raccourci
+function $(doc){
+	return document.getElementById(doc);
 }
 
-function plongeon(bp, bs){
-	document.getElementById('all').style.background = "url('carte.jpg')";
-	document.getElementById('all').style.backgroundPosition = bp;
-	document.getElementById('all').style.backgroundSize = bs;
-	all_disap();
+// Ouverture du portail en 4 étapes
+function open_portail(){
+	clearInterval(inter);
+	i=0;
+	$("dialogue").innerHTML = "<br/>";
+	speak_initialisation("Bienvenue *pseudo* !", "dialogue");
+	$('pannel_connexion').style.opacity = "0";
+	setTimeout("$('ancrage_droit').style.zIndex = '9999';", 500);
+	setTimeout(open_p2, 300);
+}
+function open_p2(){
+	$('ancrage_droit').style.borderBottomRightRadius = "200px";
+	$('ancrage_gauche').style.borderBottomLeftRadius = "200px";
+	$('ancrage_droit').style.borderTopRightRadius = "200px";
+	$('ancrage_gauche').style.borderTopLeftRadius = "200px";
+	$('logo_terre').style.opacity = "1";
+	setTimeout(open_p3, 1000);
+
+}
+function open_p3(){
+	$('logo_terre').style.transform = "rotate(500deg)";
+	setTimeout(open_p4, 500);
+}
+function open_p4(){
+	$('portail_droit').style.marginRight = "-100%";
+	$('portail_gauche').style.marginLeft = "-100%";
 }
 
-function all_disap(){
-	document.getElementById('the_bouton').style.display = "none";
-	document.getElementById('ameriqueN').style.display = "none";
-	document.getElementById('ameriqueS').style.display = "none";
-	document.getElementById('europe').style.display = "none";
-	document.getElementById('afrique').style.display = "none";
-	document.getElementById('asie').style.display = "none";
-	document.getElementById('oceanie').style.display = "none";
+function switch_inscr(){
+	$('ancrage_droit').style.marginTop = "-200%";
+	$('ancrage_gauche').style.marginTop = "-200%";
+	$('scenar').style.marginLeft = "-50%";
 }
+
+//Instance d'une parole de l'alien
+speak_initialisation("Veuillez soummettre votre identité afin que je puisse vous laisser entrer dans le portail du projet Invasion.", "dialogue");

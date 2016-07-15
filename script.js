@@ -25,6 +25,7 @@ function open_portail(){
 	$("dialogue").innerHTML = "<br/>";
 	speak_initialisation("Bienvenue *pseudo* !", "dialogue");
 	$('pannel_connexion').style.opacity = "0";
+	$('pannel_inscription').style.opacity = "0";
 	setTimeout("$('ancrage_droit').style.zIndex = '9999';", 500);
 	setTimeout(open_p2, 300);
 }
@@ -47,9 +48,29 @@ function open_p4(){
 }
 
 function switch_inscr(){
-	$('ancrage_droit').style.marginTop = "-200%";
-	$('ancrage_gauche').style.marginTop = "-200%";
-	$('scenar').style.marginLeft = "-50%";
+	$('ancrage_droit').style.top = "-200%";
+	$('ancrage_gauche').style.top = "-200%";
+	$('pannel_connexion').style.display = "none";
+	$('pannel_inscription').style.display = "block";
+	$('scenar').style.marginLeft = "-100%";
+	$('perso_alien1').style.background = "url('alien2.png')";
+	$('perso_alien1').style.backgroundSize = "100% 100%";
+	$('perso_alien1').style.height = "200px";
+	$("dialogue").style.marginTop = "-200px";
+	$("arrow").style.marginTop = "-180px";
+	setTimeout("$('scenar').style.marginLeft = '0%';", 1000);
+	setTimeout("$('ancrage_droit').style.opacity = '0';", 0);
+	setTimeout("$('ancrage_gauche').style.opacity = '0';", 0);
+	setTimeout("$('ancrage_droit').style.top = '500%';", 1500);
+	setTimeout("$('ancrage_gauche').style.top = '500%';", 1500);
+	setTimeout("$('ancrage_droit').style.opacity = '1';", 2000);
+	setTimeout("$('ancrage_gauche').style.opacity = '1';", 2000);
+	setTimeout("$('ancrage_droit').style.top = '50%';", 2000);
+	setTimeout("$('ancrage_gauche').style.top = '50%';", 2000);
+	clearInterval(inter);
+	i=0;
+	$("dialogue").innerHTML = "";
+	speak_initialisation("Ah! Une nouvelle recrue! Dépêche-toi de remplir ce petit formulaire, l'invasion n'attend pas !", "dialogue");
 }
 
 //Instance d'une parole de l'alien

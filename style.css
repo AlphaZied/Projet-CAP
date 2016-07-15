@@ -2,6 +2,7 @@ body{
 	background-size:100% 100%;
 	overflow:hidden;
 	margin:0;
+    background-color:#1695d0;
 }
 
 .portail{
@@ -64,9 +65,9 @@ body{
 }
 
 @-webkit-keyframes moove_alien{
-     from {transform:rotate(-10deg);}
-     50% {transform:rotate(10deg);}
-     to   {transform:rotate(-10deg);v }
+     from {transform:rotate(-4deg);}
+     50% {transform:rotate(4deg);}
+     to   {transform:rotate(-4deg);v }
 }
 
 #scenar{
@@ -75,7 +76,7 @@ body{
     left: 0px;
     width: 300px;
     padding: 10px;
-    transition: all 2s;
+    transition: all 1s;
 }
 
 #dialogue{

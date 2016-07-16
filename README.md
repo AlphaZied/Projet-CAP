@@ -1,7 +1,7 @@
 #ExtraGeo GAME
 
 ###Standardisation
-####Head
+####Balise Head
 ```html
 <title>ExtraGeo - La géographie amusante</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> 
@@ -10,7 +10,24 @@
 <link rel="shortcut icon" href="/favicons.ico" />
 <link rel="stylesheet" href="/style.css" type="text/css">
 ```
-
+####Header
+```html
+<div class="page-header">
+<h1 class="site-name">ExtraGeo</h1>
+<div class="liens">
+<a href="index.php" class="btn-header">Accueil</a>
+<a href="login.php" class="btn-header">Se connecter</a>
+<a href="inscription.php" class="btn-header">S'inscrire</a>
+ </div>
+</div>
+```
+####Footer
+```html
+<footer class="site-footer">
+<span class="site-footer-owner">
+<a href="http://topjeu.fr">ExtraGeo</a> est maintenu par <a href="https://github.com/AlphaZied" target="_blank">AlphaZied</a> &amp; <a href="https://github.com/OfficialAnti" target="_blank">OfficialAnti</a>.</span>
+</footer>
+```
 ###Technologies :
 - Design (CSS3) : Inspiration de l'aspect de sites web 2.0 & Concept de l'Extra-Terrestre
 - Communication client/serveur : Websockets (NodeJS) et éventuellement dans certains cas et pages Ajax
@@ -28,12 +45,12 @@
  * Statistiques (parties jouées, perdues, gagnées, xp gagné) & Afficher niveau
  * Classement chaque semaine (en terme de Score)
  * Paramètres (modifier mot de passe & upload image profil)
-3. **Panel** de connexion et d'inscription (avec récupération mot de passe et mail de bienvenue)
+3. **Panel** de connexion et d'inscription (avec récupération mot de passe, captcha, conservation session et mail de bienvenue)
 
 ###Codes couleurs :
 - Bleu, vert, blanc (nuages + atmosphère)
-- Bleu : celui de Paypal ou Skype...
-- Vert : celui de w3schools, whatsapp...
+- Bleu : #3a6786
+- Vert : #54b551
 - Jouer sur des dégradés (vert-bleu), par exemple :
 ```css
 background-image: linear-gradient(120deg, #155799, #159957);

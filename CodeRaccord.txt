@@ -1,0 +1,18 @@
+Noms des tables:
+1) Infos sur l'utilisateur = users
+- Clé primaire = id
+- Nom du joueur = pseudo
+- Niveau du joueur = lvl (valeur par défault = 1)
+- Adresse mail du joueur = email
+- Mot de passe du joueur = mdp
+- Champs d'expérience (la barre d'xp qui permet le changement de niveau lorsqu'elle est pleine) = exp (valeur par défault = 0)
+- Image de profil du joueur = pdp
+- Score pour chaque continent (Afrique;AmériqueDuNord;AmériqueDuSud;Europe;Asie;Océanie;Monde) = score (valeur par défault = 0;0;0;0;0;0;0)
+- Amis du joueur (id de l'ami 1; id de l'ami2; id de l'ami3...) = amis
+
+Après il y a d'autres tables bien-sûr mais elle ne s'utilise que sur une seule page donc pas besoin d'un raccord à ce niveau là:
+- Chat -> Je m'en occupe (pour m'entrainer au Node JS) = chat
+- Classements = class
+- Messages reçus et envoyés (entre amis) = boite
+
++ les tables du champs de bataille (capitale, drapeau, présidents...)

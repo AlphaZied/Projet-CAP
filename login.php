@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>ExtraGeo - Inscription</title>
+<title>ExtraGeo - Connexion</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="description" content="ExtraGeo est un jeu multijoueur en ligne et gratuit. Défiez vos amis dans des duels dont seul vos connaissances du terrain vous aideront à vous surpasser !" />

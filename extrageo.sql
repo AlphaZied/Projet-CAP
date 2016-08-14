@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Dim 14 Août 2016 à 13:42
+-- Généré le :  Lun 15 Août 2016 à 01:46
 -- Version du serveur :  5.6.17-log
 -- Version de PHP :  5.5.12
 
@@ -46,6 +46,28 @@ INSERT INTO `articles` (`id`, `titre`, `auteur`, `description`, `date`, `texte`)
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `passrecover`
+--
+
+CREATE TABLE IF NOT EXISTS `passrecover` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) NOT NULL,
+  `cle` varchar(255) NOT NULL,
+  `userid` int(11) NOT NULL,
+  `timestamp` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+
+--
+-- Contenu de la table `passrecover`
+--
+
+INSERT INTO `passrecover` (`id`, `email`, `cle`, `userid`, `timestamp`) VALUES
+(12, 'officialwhabbu@gmail.com', 'ua2YsJPcBEizgpvliZ4d3Q4qlX7GxM', 2, '1471300527');
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `users`
 --
 
@@ -65,14 +87,17 @@ CREATE TABLE IF NOT EXISTS `users` (
   `rank` int(11) NOT NULL,
   `grade` int(11) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Contenu de la table `users`
 --
 
 INSERT INTO `users` (`id`, `pseudo`, `lvl`, `email`, `mdp`, `exp`, `pdp`, `score`, `amis`, `ip`, `inscription`, `last_connect`, `rank`, `grade`) VALUES
-(2, 'Shamane', 1, 'yu@sk.fr', '123456', 0, NULL, '0', NULL, '::1', '1468706225', '1471174882', 1, 1);
+(2, 'Shamane', 1, 'officialwhabbu@gmail.com', '123456', 0, NULL, '0', NULL, '::1', '1468706225', '1471199480', 1, 1),
+(3, 'Shamanedqs', 1, 'dff@jd.fr', '123456', 0, NULL, '0', NULL, '::1', '1471188373', '1471188373', 1, 0),
+(4, 'Shamane2', 1, 'qddfq@js.fr', '123456', 0, NULL, '0', NULL, '::1', '1471188525', '1471188525', 1, 0),
+(5, 'Shamane3', 1, 'fdf@js.fr', '123456', 0, NULL, '0', NULL, '::1', '1471189166', '1471189166', 1, 0);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

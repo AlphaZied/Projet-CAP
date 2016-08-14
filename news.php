@@ -1,5 +1,4 @@
 <?PHP
-session_start();
 require_once("db_config.php");
 $reponse = $pdo->query('SELECT * FROM articles');
 while ($donnees = $reponse->fetch()){

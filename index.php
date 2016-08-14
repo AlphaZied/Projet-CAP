@@ -1,4 +1,6 @@
-<?PHP session_start(); ?>
+<?PHP
+require_once("db_config.php");
+?>
 <html>
 	<head>
 		<title>ExtraGeo - La géographie amusante</title>
@@ -18,9 +20,8 @@
 		<i id="arrow" class="fa fa-caret-left" aria-hidden="true"></i>
 		<div id="dialogue"></div>
 		</div>	
-		<div id="erreur_sql" onclick="disp_erreur();">
-		<i class="fa fa-exclamation-circle" aria-hidden="true" style="float:left;font-size:20px;"></i>
-		<span id="erreur_sql2"></span>
+		<div class="error">
+		<ul id="list" style="margin:0;"></ul>
 		</div>
 		<div class="portail" id="portail_gauche">
 			<div class="ancrage" id="ancrage_gauche">
@@ -57,7 +58,7 @@
 								</div>
 								<div class="ensemble">
 									<label for="email">Email</label>
-									<input class="form-elements" type="text" name="email" id="email2">
+									<input class="form-elements" type="text" name="email" id="email">
 								</div>
 								<div class="ensemble">
 									<label for="password">Mot de passe</label>
@@ -66,6 +67,9 @@
 								<div class="ensemble">
 									<label for="remdp">Confirmer Mot de passe</label>
 									<input class="form-elements" type="password" name="remdp" id="mdp2">
+								</div>
+								<div class="ensemble">
+								<div id="recaptcha"></div> 
 								</div>
 								<br/>
 								<div class="btn-submit" id="submit" onclick="verif_inscr();">S'inscrire</div>
@@ -84,6 +88,17 @@
 	</body>
 
 	<footer>
+	<script type="text/javascript">	
+	var sitekey = "6Ld9JyUTAAAAAAvJsAw3h4COcCwgLtR5ATHD_IVS"; // public key 
+	var widgetId;
+	var onloadCallback = function() {
+	widgetId = grecaptcha.render('recaptcha', {
+	'sitekey' : sitekey,
+	'theme' : 'light'
+	});
+	};
+	</script>
+			<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
 		<script type="text/javascript" src="script_index.js"></script>
 	</footer>
 </html>

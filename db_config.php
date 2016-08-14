@@ -1,4 +1,5 @@
 <?php
+session_start();
 $url = "http://localhost";
 date_default_timezone_set('Europe/Paris');
 try{

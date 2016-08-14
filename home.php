@@ -1,4 +1,6 @@
-<?PHP session_start(); ?>
+<?PHP
+require_once("db_config.php");
+?>
 <div id="deco"><i class="fa fa-power-off" aria-hidden="true"></i></div>
 <div id="box2_home">
 	<div id="menu">

@@ -1,58 +1,104 @@
 <?PHP
-session_start();
 require_once("db_config.php");
-$error = "";
-$pseudo = $_GET['pseudo'];
-$mdp = $_GET['mdp'];
-$remdp = $_GET['mdp2'];
-$email = $_GET['mail'];
+
+function isValid($code, $ip = null)
+{
+if (empty($code)) {
+return false; 
+}
+$params = array ('secret'    => '6Ld9JyUTAAAAAK7g7Zm58Dj0lzCvwN8Fkw5gEVRc', 'response'  => $code);
+if( $ip ){
+$params['remoteip'] = $ip;
+}
+$url = "https://www.google.com/recaptcha/api/siteverify?" . http_build_query($params);
+if (function_exists('curl_version')) {
+$curl = curl_init($url);
+curl_setopt($curl, CURLOPT_HEADER, false);
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($curl, CURLOPT_TIMEOUT, 10);
+curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false); 
+$response = curl_exec($curl);
+} else {
+$response = file_get_contents($url);
+}
+
+if (empty($response) || is_null($response)) {
+return false;
+}
+
+$json = json_decode($response);
+return $json->success;
+}
+
+$data = array();
+$pseudo = $_POST['pseudo'];
+$mdp = $_POST['mdp'];
+$remdp = $_POST['mdp2'];
+$email = $_POST['mail'];
 $ip = get_ip();
 $filter = preg_replace("#[^a-z\d\-=]#i", "", $pseudo);
 $email_check = preg_match("/^[a-z0-9_\.-]+@([a-z0-9]+([\-]+[a-z0-9]+)*\.)+[a-z]{2,7}$/i", $email);
-$tmp = $pdo->prepare("SELECT id FROM users WHERE pseudo = :pseudo LIMIT 1");
-$tmp->execute(array('pseudo' => $pseudo));
-$row = $tmp->fetch();
-$sql = $pdo->prepare("SELECT id FROM users WHERE email = :email LIMIT 1");
-$sql->bindParam("email", $email);
+
+$sql = $pdo->prepare("SELECT id FROM users WHERE pseudo = :pseudo LIMIT 1");
+$sql->bindParam('pseudo', $pseudo);
 $sql->execute();
-$row2 = $sql->fetch();
+$row = $sql->fetch();
+
+$sql2 = $pdo->prepare("SELECT id FROM users WHERE email = :email LIMIT 1");
+$sql2->bindParam("email", $email);
+$sql2->execute();
+$row2 = $sql2->fetch();
 
 if(!empty($pseudo) && !empty($email) && !empty($mdp) && !empty($remdp)){
 if(strlen($pseudo) > 15)
-$error = "Votre Pseudo est trop long.";
+$data['pseudo'] = "Votre Pseudo est trop long.";
 
 if(strlen($pseudo) <= 2)
-$error = "Merci d'entrer un Pseudo.";
+$data['pseudo'] = "Merci d'entrer un Pseudo.";
 
 if($row)
-$error = 'Votre pseudo est déjà utilisé.';
+$data['pseudo'] = 'Votre pseudo est déjà utilisé.';
 
 if($filter !== $pseudo)
-$error = 'Votre Pseudo contient des caractères non autorisés.';
+$data['pseudo'] = 'Votre Pseudo contient des caractères non autorisés.';
 
 if($mdp !== $remdp)
-$error = "Les mots de passe ne correspondent pas.";
+$data['mdp'] = "Les mots de passe ne correspondent pas.";
 
 if(strlen($mdp) < 6)
-$error = "Votre mot de passe est trop court.";
+$data['mdp'] = "Votre mot de passe est trop court.";
 
 if(strlen($mdp) > 20)
-$error = "Votre mot de passe est trop long.";
+$data['mdp'] = "Votre mot de passe est trop long.";
 
 if(strlen($email) < 6)
-$error = "Merci d'entrer une adresse email valide.";
+$data['email'] = "Merci d'entrer une adresse email valide.";
 
 if($email_check !== 1)
-$error = "Merci d'entrer une adresse email valide.";
+$data['email'] = "Merci d'entrer une adresse email valide.";
 
 if($row2)
-$error = "L'adresse mail est déjà utilisée.";
-}else{
-	$error = "Veuillez remplir tous les champs!";
+$data['email'] = "L'adresse mail est déjà utilisée.";
+
+if(isset($_POST['g-recaptcha-response'])) 
+{
+if(!isValid($_POST['g-recaptcha-response'], $ip))
+$data['captcha'] = 'Captcha incorrect.';
+}
+else
+{
+$data['captcha'] = 'Veuillez valider le captcha.';
 }
 
-echo $error;
-if(empty($error)){
+}
+else
+{
+$data['champ'] = true;
+}
+
+if(empty($data))
+{
+$data['success'] = true;
 $rank = 1;
 $now = time();
 $titre = "Soldat Première classe";
@@ -72,4 +118,5 @@ $_SESSION['mdp'] = $mdp;
 $_SESSION['lvl'] = 1;
 $_SESSION['titre'] = $titre;
 }
+echo json_encode($data);
 ?>

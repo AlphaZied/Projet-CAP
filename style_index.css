@@ -90,7 +90,7 @@ body{
     text-align: center;
     padding: 5px;
     z-index:9000;
-    height:85px;
+    height:90px;
     border-radius:10px;
     transition: all 0.5s;
 }
@@ -637,4 +637,17 @@ border-color: #367b34;
 
 #deco:hover{
     font-size:20px;
+}
+
+.error {
+display : none;
+position: absolute;
+z-index : 2;
+left: 35%;
+width: 30%;
+padding: 10px;
+text-align: center;
+color: #fff;
+border: 2px solid #d73939;
+background-color: #cb4e4e;
 }

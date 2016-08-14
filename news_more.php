@@ -1,5 +1,4 @@
 <?PHP
-session_start();
 require_once("db_config.php");
 $id = $_GET['id'];
 $reponse = $pdo->prepare('SELECT * FROM articles WHERE id = :id');

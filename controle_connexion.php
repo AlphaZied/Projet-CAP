@@ -11,6 +11,9 @@ if(!empty($pseudo) && !empty($mdp)){
 	$row = $sql->fetch();
 	if(!$row){
 		$erreur = 'Pseudo ou mot de passe incorrect.';
+	}else{
+		$_SESSION['titre'] = $row['grade'];
+		$_SESSION['lvl'] = $row['lvl'];
 	}
 }
 else{

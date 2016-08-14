@@ -1,4 +1,5 @@
 <?PHP
+session_start();
 require_once("db_config.php");
 $error = "";
 $pseudo = $_GET['pseudo'];
@@ -54,17 +55,21 @@ echo $error;
 if(empty($error)){
 $rank = 1;
 $now = time();
-$sql = $pdo->prepare("INSERT INTO users (pseudo, mdp, email, ip, inscription, last_connect, rank) VALUES (:pseudo, :mdp, :email, :ip, :inscription, :last_connect, :rank) ");
+$titre = "Soldat Première classe";
+$sql = $pdo->prepare("INSERT INTO users (pseudo, mdp, email, ip, inscription, last_connect, grade, rank) VALUES (:pseudo, :mdp, :email, :ip, :inscription, :last_connect, :grade, :rank) ");
 $sql->bindParam('pseudo', $pseudo);
 $sql->bindParam('mdp', $mdp);
 $sql->bindParam('email', $email);
 $sql->bindParam('ip', $ip);
 $sql->bindParam('inscription', $now);
 $sql->bindParam('last_connect', $now);
+$sql->bindParam('grade', $titre);
 $sql->bindParam('rank', $rank);
 $sql->execute();
 
 $_SESSION['pseudo'] = $pseudo;
 $_SESSION['mdp'] = $mdp;
+$_SESSION['lvl'] = 1;
+$_SESSION['titre'] = $titre;
 }
 ?>

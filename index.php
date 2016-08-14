@@ -1,12 +1,23 @@
+<?PHP session_start(); ?>
 <html>
 	<head>
+		<title>ExtraGeo - La géographie amusante</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> 
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="description" content="ExtraGeo est un jeu multijoueur en ligne et gratuit. Défiez vos amis dans des duels dont seul vos connaissances du terrain vous aideront à vous surpasser !" />
 		<link rel="stylesheet" type="text/css" href="./SpecialFonts/css/font-awesome.min.css" media="all"/>
 		<link rel="stylesheet" type="text/css" href="./SpecialFonts/css/font-awesome.css" media="all"/>
 		<link rel="stylesheet" type="text/css" href="style_index.css" media="all"/>
 	</head>
 
-	<body>
-		<div id="scenar"><div id="perso_alien1"></div><i id="arrow" class="fa fa-caret-left" aria-hidden="true"></i><div id="dialogue"></div></div>	
+	<body id="id_body">
+		<div id="box_home">
+		</div>
+		<div id="scenar">
+		<div id="perso_alien1"></div>
+		<i id="arrow" class="fa fa-caret-left" aria-hidden="true"></i>
+		<div id="dialogue"></div>
+		</div>	
 		<div id="erreur_sql" onclick="disp_erreur();">
 		<i class="fa fa-exclamation-circle" aria-hidden="true" style="float:left;font-size:20px;"></i>
 		<span id="erreur_sql2"></span>
@@ -29,8 +40,8 @@
 								<div class="ensemble">
 								Rester connecté? <input type="checkbox" id="gyrus" name="remember_me" checked="checked" value="true" onclick="">
 								</div>
-								<div class="btn-submit" id="submit" onclick="verif_con();">Connexion</div>
-							    <div class="btn-submit" id="submit" style="margin-top:10px;background-color: #19668a;border-color: #09354d;" onclick="switch_inscr();">Toujours pas inscris ?</div>
+								<div class="btn-submit" id="submit1" onclick="verif_con();">Connexion</div>
+							    <div class="btn-submit" id="submit2" onclick="switch_inscr();">Toujours pas inscris ?</div>
 							</form>
 						</div>
 					</div> 

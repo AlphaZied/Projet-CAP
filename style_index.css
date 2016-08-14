@@ -651,3 +651,31 @@ color: #fff;
 border: 2px solid #d73939;
 background-color: #cb4e4e;
 }
+
+a.logout {
+color: #fff;
+}
+
+.success {
+display: none;
+position: absolute;
+z-index: 2;
+left: 35%;
+width: 30%;
+padding: 10px;
+text-align: center;
+color: #fff;
+border: 2px solid #39d74c;
+background-color: #4ecb74;
+}
+
+.load {
+display :none;
+cursor: not-allowed;
+text-align: center;
+padding: 10px;
+border: 1px solid #aa9f9f;
+border-radius: 5px;
+background-color: #c4baba;
+color: #fff;
+}

@@ -1,5 +1,10 @@
 <?PHP
 require_once("db_config.php");
+if(!isset($_SESSION['pseudo']))
+{
+header('Location: '.$url.'');
+exit;
+}
 $reponse = $pdo->query('SELECT * FROM articles');
 while ($donnees = $reponse->fetch()){
 	$z = $donnees['id']%2;

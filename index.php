@@ -97,6 +97,34 @@ require_once("db_config.php");
 	'theme' : 'light'
 	});
 	};
+	function set_pass()
+	{
+	var req_ajax = new XMLHttpRequest();
+	var url = "/forgot.php";
+	req_ajax.open("GET", url, true);
+	req_ajax.send(null);
+	req_ajax.onreadystatechange = function()
+	{
+	if(req_ajax.readyState === 4)
+	{
+	processAjaxData(req_ajax.responseText, url);
+	}
+	}
+	}
+
+	function processAjaxData(response, urlPath){
+	document.open();
+	document.write(response);
+	document.close();
+	document.title = "ExtraGeo - Mot de passe Oublié";
+	window.history.pushState({"html":response,"pageTitle":"ExtraGeo - Mot de passe Oublié"},"", urlPath);
+	}
+    
+    var link = document.querySelector('a');
+    link.addEventListener("click", function(event) {
+    event.preventDefault();
+    set_pass();
+    });
 	</script>
 			<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
 		<script type="text/javascript" src="script_index.js"></script>

@@ -1,7 +1,15 @@
 <?PHP
 require_once("db_config.php");
+if(!isset($_SESSION['pseudo']))
+{
+header('Location: '.$url.'');
+exit;
+}
 ?>
-<div id="deco"><i class="fa fa-power-off" aria-hidden="true"></i></div>
+<div id="deco">
+<a class="logout" href="/logout.php">
+<i class="fa fa-power-off" aria-hidden="true"></i></a>
+</div>
 <div id="box2_home">
 	<div id="menu">
 		<div class="case_profil" id="profil_j">

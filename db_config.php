@@ -35,4 +35,34 @@ $ipaddress = 'UNKNOWN';
 return $ipaddress;
 }
 
+if(isset($_SESSION['pseudo']))
+{
+$pseudo = $_SESSION['pseudo'];
+$mdp = $_SESSION['mdp'];
+$sql = $pdo->prepare("SELECT * FROM users WHERE pseudo = :pseudo AND mdp = :mdp LIMIT 1");
+$sql->execute(array(
+'pseudo' => $pseudo,
+'mdp' => $mdp
+));
+$user = $sql->fetch();
+if(!$user)
+$row = 0;
+else
+$row = 1;
+
+if($row == 1)
+{
+$sql = $pdo->prepare("UPDATE users SET ip = :ip WHERE id = :id");
+$sql->execute(array(
+'ip' => get_ip(),
+'id' => $user['id']
+));
+}
+else {
+session_destroy();
+header('Location: '.$url.'');
+exit();
+}
+}
+
 ?>

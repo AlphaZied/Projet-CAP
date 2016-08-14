@@ -1,5 +1,10 @@
 <?PHP
 require_once("db_config.php");
+if(!isset($_SESSION['pseudo']))
+{
+header('Location: '.$url.'');
+exit;
+}
 $id = $_GET['id'];
 $reponse = $pdo->prepare('SELECT * FROM articles WHERE id = :id');
 $reponse->execute(array('id' => $id));

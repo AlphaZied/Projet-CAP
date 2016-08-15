@@ -3,6 +3,68 @@ require_once("db_config.php");
 require_once("phpmailer/PHPMailerAutoload.php");
 $data = array();
 $data['change'] = false;
+
+if(isset($_GET['key']))
+{
+$cle = $_GET['key'];
+$sql = $pdo->prepare("SELECT * FROM passrecover WHERE cle = :cle");
+$sql->bindParam("cle", $cle);
+$sql->execute();
+$fetch = $sql->fetch();
+if($fetch)
+{
+
+$time = $fetch['timestamp'];
+$userid = $fetch['userid'];
+$now = date('d-m-Y H:i:s');
+
+if($time >= strtotime($now))
+{
+$data['change'] = true;
+}
+else
+{
+$data['errors'] = "Demande de modification expirée.";
+}
+
+}
+else
+{
+$data['errors'] = "Une erreur est survenue.";
+}
+}
+
+if($data['change'])
+{
+if(isset($_POST['submit']))
+{
+$mdp = $_POST['mdp'];
+$mdpre = $_POST['mdpre'];
+
+if($mdp != $mdpre)
+$data['errors'] = "Les mots de passes ne correspondent pas";
+
+if(strlen($mdp) < 6)
+$data['errors'] = "Le mot de passe est trop court";
+
+if(strlen($mdp) > 30)
+$data['errors'] = "Le mot de passe est trop long";
+
+if(empty($data['errors']))
+{
+$sql = $pdo->prepare("UPDATE users SET mdp = :mdp WHERE id = :userid");
+$sql->bindParam("mdp", $mdp);
+$sql->bindParam("userid", $userid);
+$sql->execute();
+$sql = $pdo->prepare("UPDATE `passrecover` SET `timestamp` = '0' WHERE `userid` = :userid");
+$sql->bindParam("userid", $userid);
+$sql->execute();
+$data['success'] = "Le mot de passe a été modifié avec succès !";
+//header('Location: '.$url.'/index.php?success');
+}
+}
+}
+
 if(!$data['change'])
 {
 function RandomString($length = 30) {
@@ -116,65 +178,4 @@ $data['errors'] = 'Veuillez valider le captcha';
 }
 }
 
-if(isset($_GET['key']))
-{
-$cle = $_GET['key'];
-$sql = $pdo->prepare("SELECT * FROM passrecover WHERE cle = :cle");
-$sql->bindParam("cle", $cle);
-$sql->execute();
-$fetch = $sql->fetch();
-if($fetch)
-{
-
-$time = $fetch['timestamp'];
-$userid = $fetch['userid'];
-$now = date('d-m-Y H:i:s');
-
-if($time >= strtotime($now))
-{
-$data['change'] = true;
-}
-else
-{
-$data['errors'] = "Demande de modification expirée.";
-}
-
-}
-else
-{
-$data['errors'] = "Une erreur est survenue.";
-}
-}
-
-if($data['change'])
-{
-if(isset($_POST['submit']))
-{
-$mdp = $_POST['mdp'];
-$mdpre = $_POST['mdpre'];
-
-if($mdp != $mdpre)
-$data['errors'] = "Les mots de passes ne correspondent pas";
-
-if(strlen($mdp) < 6)
-$data['errors'] = "Le mot de passe est trop court";
-
-if(strlen($mdp) > 30)
-$data['errors'] = "Le mot de passe est trop long";
-
-if(empty($data))
-{
-$sql = $pdo->prepare("UPDATE users SET mdp = :mdp WHERE id = :userid");
-$sql->bindParam("mdp", $mdp);
-$sql->bindParam("userid", $userid);
-$sql->execute();
-$sql = $pdo->prepare("UPDATE `passrecover` SET `timestamp` = '0' WHERE `userid` = :userid");
-$sql->bindParam("userid", $userid);
-$sql->execute();
-$data['success'] = "Le mot de passe a été modifié avec succès !";
-header('Location: '.$url.'/index.php?success');
-exit;
-}
-}
-}
 echo json_encode($data);

@@ -1,5 +1,10 @@
 <?PHP
 require_once("db_config.php");
+if(isset($_SESSION['pseudo']))
+{
+header('Location: /home.php');
+exit;
+}
 ?>
 <html>
 	<head>

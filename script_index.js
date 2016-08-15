@@ -227,13 +227,26 @@ function verif_inscr(){
 	}
 }
 
-function set_home(){
-	var url = "home.php";
-	req_ajax.open("GET", url, false);
-	req_ajax.send(null);
-	$('box_home').style.display = "block";
-	$('box_home').innerHTML = req_ajax.responseText;
-	switch_page("news");
+function set_home()
+{
+var url = "/home.php";
+req_ajax.open("GET", url, true);
+req_ajax.send(null);
+req_ajax.onreadystatechange = function()
+{
+if(req_ajax.readyState === 4)
+{
+processAjaxData(req_ajax.responseText, url);
+}
+}
+}
+
+function processAjaxData(response, urlPath){
+document.open();
+document.write(response);
+document.close();
+document.title = "ExtraGeo - Home";
+window.history.pushState({"html":response,"pageTitle":"ExtraGeo - Home"},"", urlPath);
 }
 
 function didactiel(){
@@ -275,9 +288,13 @@ function switch_page(page){
 		$('case_class').style.borderBottomColor = "white";
 		$('case_infos').style.borderBottomColor = "white";
 		var url = "news.php";
-		req_ajax.open("GET", url, false);
+		req_ajax.open("GET", url, true);
 		req_ajax.send(null);
+		req_ajax.onreadystatechange = function()
+		{
+		if(req_ajax.readyState === 4)
 		$('box4_home').innerHTML = req_ajax.responseText;
+		}
 	}
 	if(page == "infos"){
 		$('case_news').style.borderBottomColor = "white";
@@ -289,7 +306,11 @@ function switch_page(page){
 
 function news(article){
 	var url = "news_more.php?id="+article;
-	req_ajax.open("GET", url, false);
+	req_ajax.open("GET", url, true);
 	req_ajax.send(null);
+	req_ajax.onreadystatechange = function()
+	{
+	if(req_ajax.readyState === 4)
 	$('box4_home').innerHTML = req_ajax.responseText;
+	}
 }

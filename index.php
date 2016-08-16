@@ -2,7 +2,7 @@
 require_once("db_config.php");
 if(isset($_SESSION['pseudo']))
 {
-header('Location: /home.php');
+header('Location: home.php');
 exit;
 }
 ?>
@@ -93,7 +93,8 @@ exit;
 	</body>
 
 	<footer>
-	<script type="text/javascript">	
+	<script type="text/javascript" src="script_index.js"></script>
+	<script type="text/javascript">
 	var sitekey = "6Ld9JyUTAAAAAAvJsAw3h4COcCwgLtR5ATHD_IVS"; // public key 
 	var widgetId;
 	var onloadCallback = function() {
@@ -105,7 +106,7 @@ exit;
 	function set_pass()
 	{
 	var req_ajax = new XMLHttpRequest();
-	var url = "/forgot.php";
+	var url = "forgot.php";
 	req_ajax.open("GET", url, true);
 	req_ajax.send(null);
 	req_ajax.onreadystatechange = function()
@@ -130,8 +131,9 @@ exit;
     event.preventDefault();
     set_pass();
     });
+    	speak_initialisation("Veuillez soummettre votre identité afin que je puisse vous laisser entrer dans le portail du projet Invasion.", "dialogue");
+
 	</script>
 			<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
-		<script type="text/javascript" src="script_index.js"></script>
 	</footer>
 </html>

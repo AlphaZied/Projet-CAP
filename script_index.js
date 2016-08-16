@@ -4,7 +4,6 @@ var caract; // contient les caractères du message qui se veut d'avoir l'effet p
 var req_ajax = new XMLHttpRequest();
 var dida = false;
 var count_scenar = 0;
-
 // Module permettant l'effet parole de l'alien
 function speak_initialisation(mess, content){
 	caract = mess.split("");
@@ -20,8 +19,6 @@ function speak(mess, content){
 function $(doc){
 	return document.getElementById(doc);
 }
-
-parole_alien();
 
 // Ouverture du portail en 4 étapes
 function open_portail(pseudo){
@@ -63,8 +60,8 @@ function open_p5(){
 }
 
 function switch_inscr(){
-	$('ancrage_droit').style.height = "550px";
-	$('ancrage_gauche').style.height = "550px";
+	$('ancrage_droit').style.height = "553px";
+	$('ancrage_gauche').style.height = "553px";
 	$('ancrage_droit').style.top = "-200%";
 	$('ancrage_gauche').style.top = "-200%";
 	setTimeout("$('pannel_connexion').style.display = 'none';", 500);
@@ -76,8 +73,8 @@ function switch_inscr(){
 	setTimeout("$('ancrage_gauche').style.top = '500%';", 1500);
 	setTimeout("$('ancrage_droit').style.opacity = '1';", 2000);
 	setTimeout("$('ancrage_gauche').style.opacity = '1';", 2000);
-	setTimeout("$('ancrage_droit').style.top = '57%';", 2000);
-	setTimeout("$('ancrage_gauche').style.top = '57%';", 2000);
+	setTimeout("$('ancrage_droit').style.top = '50%';", 2000);
+	setTimeout("$('ancrage_gauche').style.top = '50%';", 2000);
 	speak_initialisation("Ah! Une nouvelle recrue! Dépêche-toi de remplir ce petit formulaire, l'invasion n'attend pas !", "dialogue");
 }
 
@@ -99,11 +96,6 @@ function disap_perso(){
 	$('scenar').display = "none";
 }
 
-//Instance d'une parole de l'alien
-function parole_alien(){
-speak_initialisation("Veuillez soummettre votre identité afin que je puisse vous laisser entrer dans le portail du projet Invasion.", "dialogue");
-}
-
 function verif_con()
 {
 	var ajax_con = new XMLHttpRequest();
@@ -111,7 +103,7 @@ function verif_con()
 	var mdp = $('password').value;
 	
 	var data = new FormData();
-	ajax_con.open('POST', '/controle_connexion.php', true);
+	ajax_con.open('POST', 'controle_connexion.php', true);
 	data.append('pseudo', pseudo);
 	data.append('mdp', mdp);
 	ajax_con.send(data);
@@ -148,7 +140,7 @@ function verif_inscr(){
 	var mdp = $('mdp').value;
 	var mdp2 = $('mdp2').value;
 	var data = new FormData();
-	req_ajax.open('POST', '/controle_inscription.php', true);
+	req_ajax.open('POST', 'controle_inscription.php', true);
 	data.append('pseudo', pseudo);
 	data.append('mail', mail);
 	data.append('mdp', mdp);
@@ -229,7 +221,7 @@ function verif_inscr(){
 
 function set_home()
 {
-var url = "/home.php";
+var url = "home.php";
 req_ajax.open("GET", url, true);
 req_ajax.send(null);
 req_ajax.onreadystatechange = function()

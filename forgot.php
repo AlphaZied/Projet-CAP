@@ -39,7 +39,7 @@ require_once("db_config.php");
 <div id="pannel_inscription">
 <div class="main">
 <div class="box">
-<div class="return" style="position: absolute;"><a href="/index.php">Retourner</a></div>
+<div class="return" style="position: absolute;"><a href="index.php">Retour</a></div>
 <h3 class="box-header">Mot de passe oublié?</h3>
 <form class="form" method="post">
 <div class="ensemble first">
@@ -87,6 +87,7 @@ widgetId = grecaptcha.render('recaptcha', {
 <script type="text/javascript" src="script_index.js"></script>
 <script>
 switch_perso();
+$('dialogue').innerHTML = "";
 clearInterval(inter);
 i=0;
 speak_initialisation("Un bon soldat, est un soldat qui a une bonne mémoire ! Je te pardonne cette fois-ci mais fait attention la prochaine fois !", "dialogue");
@@ -94,7 +95,7 @@ speak_initialisation("Un bon soldat, est un soldat qui a une bonne mémoire ! Je
 function set_index()
 {
 var req_ajax = new XMLHttpRequest();
-var url = "/index.php";
+var url = "index.php";
 req_ajax.open("GET", url, true);
 req_ajax.send(null);
 req_ajax.onreadystatechange = function()
@@ -128,7 +129,7 @@ if(key)
 {
 console.log(key);
 var getxhr = new XMLHttpRequest();
-getxhr.open('GET', '/forgot_check.php?key='+key, true);
+getxhr.open('GET', 'forgot_check.php?key='+key, true);
 getxhr.send(null);
 getxhr.onreadystatechange = function()
 {
@@ -177,13 +178,13 @@ var mdpre = $('mdpre').value;
 }
 if(!key)
 {
-xhr.open('POST', '/forgot_check.php', true);
+xhr.open('POST', 'forgot_check.php', true);
 data.append('email', email);
 data.append('g-recaptcha-response', grecaptcha.getResponse(widgetId));
 }
 else
 {
-xhr.open('POST', '/forgot_check.php?key='+key, true);
+xhr.open('POST', 'forgot_check.php?key='+key, true);
 data.append('mdp', mdp);
 data.append('mdpre', mdpre);
 data.append('key', key);

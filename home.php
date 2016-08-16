@@ -20,7 +20,7 @@ exit;
 <body id="id_body" style="overflow: visible; display: flex;">
 <div id="box_home" style="display: block;">
 <div id="deco">
-<a class="logout" href="/logout.php">
+<a class="logout" href="logout.php">
 <i class="fa fa-power-off" aria-hidden="true"></i></a>
 </div>
 <div id="box2_home">
